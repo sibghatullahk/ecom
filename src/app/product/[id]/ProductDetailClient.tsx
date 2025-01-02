@@ -2,6 +2,7 @@
 
 import { Product } from "@/app/context/CartContext";
 import { useCart } from "@/app/context/CartContext";
+import Image from "next/image";
 
 interface ProductDetailClientProps {
   product: Product;
@@ -22,7 +23,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
   return (
     <div className="max-w-lg mx-auto">
       <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-      <img
+      <Image
         src={product.image}
         alt={product.name}
         className="w-full h-64 object-cover mb-4"
