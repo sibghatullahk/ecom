@@ -1,21 +1,27 @@
-// /app/product/[id]/page.tsx
+"use client"; // Mark this as a client-side component
 
-import { notFound } from "next/navigation";
-import { products } from "./../../data/products"; 
-
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { products } from "../../data/products";
 import ProductDetailClient from "./ProductDetailClient";
 
-export default async function ProductDetails({
-  params,
-}: {
-  params: { id: string };
-}) {
-  // We're still "using" params here but in an async function 
-  // that Next.js can handle properly.
-  const product = products.find((p) => p.id === params.id);
+export default function ProductDetails() {
+  const { id } = useParams(); // Fetch dynamic route parameter
+  const [product, setProduct] = useState<typeof products[0] | undefined>(undefined);
 
-  if (!product) return notFound();
+  useEffect(() => {
+    if (id) {
+      // Find the product using the dynamic route parameter
+      const foundProduct = products.find((p) => p.id === id);
+      setProduct(foundProduct);
+    }
+  }, [id]);
 
-  // Return a client component, passing the product data.
+  if (!product) {
+    // Handle the case where no product is found (404)
+    return <div>Product not found</div>;
+  }
+
+  // Return the ProductDetailClient component with the product data
   return <ProductDetailClient product={product} />;
 }
