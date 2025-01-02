@@ -21,7 +21,7 @@ export default function CheckoutPage() {
 
   return (
     <div className="max-w-lg mx-auto">
-      <h1 className="text-3xl font-bold mb-4">Thank You for Your Purchase!</h1>
+      <h1 className="text-3xl font-bold mb-4">Thank You for Your Purchase.</h1>
       <p className="mb-2">
         Your order <strong>#{orderId}</strong> has been successfully processed.
       </p>
@@ -42,9 +42,9 @@ export default function CheckoutPage() {
 
       <p className="mb-4">
         We appreciate your business and will send an email with the order details
-        soon. If you have any questions, feel free to{" "}
+        soon. If you have any questions feel free to{" "}
         <a href="/contact" className="text-blue-500 underline">
-          contact us
+          Contact us
         </a>.
       </p>
     </div>

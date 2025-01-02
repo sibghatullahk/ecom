@@ -19,7 +19,7 @@ export default function CartPage() {
     <div>
       <h1 className="text-2xl font-bold">Shopping Cart</h1>
       {cart.length === 0 ? (
-        <p>Your cart is empty!</p>
+        <p>Your cart is empty.</p>
       ) : (
         <div>
           {cart.map((item) => (

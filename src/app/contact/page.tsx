@@ -19,7 +19,7 @@ export default function ContactPage() {
   return (
     <div className="max-w-md mx-auto">
       <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
-      <p className="mb-6">Have questions or need assistance? Send us a message!</p>
+      <p className="mb-6">Have questions or need assistance? Send us a message.</p>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="name" className="block font-bold mb-1">Name</label>
